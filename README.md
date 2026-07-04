@@ -14,7 +14,7 @@ Linear 프로젝트 ↔ Notion 캘린더 DB 동기화
 
 ### 2. Linear
 - **Personal API key**: Settings → Security & access → Personal API keys
-- **Project ID**: 아래로 목록 확인
+- **Project ID**: 아래로 목록 확인 (리니어 api key 세팅 후 진행)
   ```bash
   node --env-file=.env -e "fetch('https://api.linear.app/graphql',{method:'POST',headers:{Authorization:process.env.LINEAR_API_KEY,'Content-Type':'application/json'},body:JSON.stringify({query:'{projects(first:50){nodes{id name}}}'})}).then(r=>r.json()).then(d=>d.data.projects.nodes.forEach(p=>console.log(p.id,p.name)))"
   ```
@@ -37,7 +37,6 @@ npm run check            # 연결 확인
 npm run poll             # 시작 (계속 켜두면 주기적으로 동기화)
 ```
 
-끝. Linear에서 이슈 만들고 Notion 캘린더에 반영됩니다.
 
 ---
 
