@@ -1,0 +1,17 @@
+{
+  "name": "linear-notion-sync",
+  "version": "1.0.0",
+  "description": "Linear 프로젝트를 Notion 캘린더 DB와 폴링 동기화 (양방향 수정 + 거울)",
+  "type": "module",
+  "main": "poll.js",
+  "scripts": {
+    "start": "node --env-file=.env poll.js",
+    "setup": "node --env-file=.env setup.js",
+    "poll": "node --env-file=.env poll.js",
+    "poll:once": "node --env-file=.env poll.js --once",
+    "check": "node --env-file=.env check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
